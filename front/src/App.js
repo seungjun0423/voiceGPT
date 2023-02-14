@@ -6,15 +6,22 @@ import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognitio
 
 const Main = styled.div`
   width:100%;
-  height:100vh;
+  height:100%;
   position:relative;
   display:flex;
-  justify-content:center;
 `
 
 const Wrap = styled.div`
   margin-right:auto;
   margin-left:auto;
+`
+
+const Des = styled.div`
+  width:100%;
+  font-size:20px;
+  color:grey;
+  font-family: 'Nanum Gothic', sans-serif;
+  margin-top:30px;
 `
 
 const Div = styled.div`
@@ -27,7 +34,7 @@ const Div = styled.div`
   text-align:center;
   font-weight:bold;
   font-size:100px;
-  padding-top:40px;
+  padding-top:60px;
   font-family: 'Nanum Gothic', sans-serif;
   color:#ffffff;
   @media(max-width:520px){
@@ -40,7 +47,6 @@ const Button = styled.button`
   width:50px;
   height:40px;
   border-radius:10px;
-  background:skyblue;
   margin-top:10px;
 `
 
@@ -75,7 +81,17 @@ const App = () => {
         음성GPT
         <Main>
           <Wrap>
-            <div style={{ marginTop:'100px'}}>
+            <Des>
+              사용시 숙지 사항<br/>
+              AI를 쉽고 간편하게 이용해보세요<br/><br/>
+              <li>
+                버튼을 눌러 음성 인식을 켜고 끌수 있습니다.
+              </li>
+              <li>
+                단어 위주로 짧고 명확하게 발음해주세요.
+              </li> 
+            </Des>
+            <div style={{ paddingTop:'100px'}}>
               {listening ? 'on' : 'off'}
             </div>
             <Button 
@@ -95,7 +111,7 @@ const App = () => {
         </Main>
     
         <Footer>
-          안녕하세요 저는 어플을 만든 웹 개발자 이승준입니다! <br/>
+          안녕하세요 저는 어플을 만든 개발자 이승준입니다! <br/>
           저에 대해 궁금하시다면 여기를 클릭해주세요!
         </Footer>
       </Div>
