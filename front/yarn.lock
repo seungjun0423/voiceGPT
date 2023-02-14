@@ -6387,6 +6387,7 @@ __metadata:
     eslint-plugin-react: latest
     react: ^18.2.0
     react-dom: ^18.2.0
+    react-hook-text-to-speech: ^1.0.10
     react-is: ^18.2.0
     react-router-dom: ^6.8.1
     react-scripts: 5.0.1
@@ -10670,6 +10671,13 @@ __metadata:
   version: 6.0.11
   resolution: "react-error-overlay@npm:6.0.11"
   checksum: ce7b44c38fadba9cedd7c095cf39192e632daeccf1d0747292ed524f17dcb056d16bc197ddee5723f9dd888f0b9b19c3b486c430319e30504289b9296f2d2c42
+  languageName: node
+  linkType: hard
+
+"react-hook-text-to-speech@npm:^1.0.10":
+  version: 1.0.10
+  resolution: "react-hook-text-to-speech@npm:1.0.10"
+  checksum: 7bd61d78355897df0f88b3807bbb29d3654b4b1af8d5ff11ed5336dd267a021186a0ae461ea5e8553ead2ec1f21cf6da118d5fa6b64701590430c97436a55f9b
   languageName: node
   linkType: hard
 

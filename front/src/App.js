@@ -6,7 +6,7 @@ import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognitio
 
 const Main = styled.div`
   width:100%;
-  height:100%;
+  height:600px;
   position:relative;
   display:flex;
 `
@@ -45,6 +45,7 @@ const Title = styled.div`
   font-family: 'Nanum Gothic', sans-serif;
   color:#ffffff;
   font-size:100px;
+  margin-top:50px;
   @media(max-width:520px){
     font-size:40px;
   }
@@ -52,11 +53,17 @@ const Title = styled.div`
 `
 
 const Button = styled.button`
-  display:block;
-  width:50px;
-  height:40px;
+  width:120px;
+  height:80px;
   border-radius:10px;
-  margin-top:10px;
+  margin:30px 10px 10px 10px;
+  font-weight:bold;
+  font-size:16px;
+  font-family: 'Nanum Gothic', sans-serif;
+  cursor:pointer;
+  border:none;
+  background-color:#A99;
+  color:white;
 `
 
 
@@ -75,6 +82,11 @@ const Footer = styled.div`
   }
 `
 
+const Text = styled.p`
+  fontSize:"20px";
+  margin:20px;
+`
+
 const App = () => {
   const { transcript,listening,resetTranscript,browserSupportsSpeechRecognition
   } = useSpeechRecognition();
@@ -88,7 +100,7 @@ const App = () => {
     <>
       <Div>
         <Title>
-          voice GPT
+          음성인식 GPT
         </Title>
         <Main>
           <Wrap>
@@ -99,25 +111,29 @@ const App = () => {
                 버튼을 눌러 음성 인식을 켜고 끌수 있습니다.
               </li>
               <li>
-                검색은 단어로 짧고 명확하게 발음해주세요.
-              </li> 
+                검색은 단어 단위로 짧고 명확하게 발음해주세요.
+              </li>
+              <li>
+                마이크를 켜고 2초 후 원하는 검색어를 말하세요.
+              </li>
             </Des>
             <div style={{ paddingTop:'100px'}}>
-              {listening ? 'on' : 'off'}
+              마이크 : {listening ? 'on' : 'off'}
             </div>
             <Button 
               onClick={SpeechRecognition.startListening}>
-              Start
+              마이크 켜기
             </Button>
             <Button onClick={SpeechRecognition.stopListening}>
-              Stop
+              마이크 끄기 
             </Button>
             <Button onClick={resetTranscript}>
-              Reset
+              초기화
             </Button>
-            <p style={{ fontSize:"20px" }}>
+            <Text>
               {transcript}
-            </p>
+            </Text>
+
           </Wrap>
         </Main>
     
