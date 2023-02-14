@@ -2,6 +2,8 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import styled from "styled-components";
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+import useSpeech from 'react-hook-text-to-speech';
+
 
 
 const Main = styled.div`
