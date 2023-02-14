@@ -4,7 +4,7 @@ import styled from "styled-components";
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
 
-const Html = styled.div`
+const Body = styled.div`
   width:100%;
   height:100%;
 `
@@ -27,11 +27,7 @@ const Nav = styled.div`
 `
 
 const App = () => {
-  const {
-    transcript,
-    listening,
-    resetTranscript,
-    browserSupportsSpeechRecognition
+  const { transcript,listening,resetTranscript,browserSupportsSpeechRecognition
   } = useSpeechRecognition();
 
 
@@ -41,18 +37,29 @@ const App = () => {
 
   return (
     <>
-      <Html>
+      <Body>
         <Nav>
           음성GPT
         </Nav>
         <div>
-          <p>Microphone: {listening ? 'on' : 'off'}</p>
-          <button onClick={SpeechRecognition.startListening}>Start</button>
-          <button onClick={SpeechRecognition.stopListening}>Stop</button>
-          <button onClick={resetTranscript}>Reset</button>
-          <p>{transcript}</p>
+          <p>
+            Microphone: {listening ? 'on' : 'off'}
+          </p>
+          <button onClick={SpeechRecognition.startListening}>
+            Start
+          </button>
+          <button onClick={SpeechRecognition.stopListening}>
+            Stop
+          </button>
+          <button onClick={resetTranscript}>
+            Reset
+          </button>
+          <p>
+            {transcript}
+            {console.log(transcript)}
+          </p>
         </div>
-      </Html>
+      </Body>
     </>
 
   );
