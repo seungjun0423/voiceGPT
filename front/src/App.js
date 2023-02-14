@@ -1,5 +1,8 @@
+import React from 'react';
 import { useState, useEffect } from 'react';
 import styled from "styled-components";
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+
 
 const Html = styled.div`
   width:100%;
@@ -19,6 +22,7 @@ const Nav = styled.div`
   font-size:60px;
   padding-top:40px;
   font-family: 'Nanum Gothic', sans-serif;
+  color:#ffffff;
 
 `
 
