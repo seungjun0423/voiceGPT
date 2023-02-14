@@ -33,13 +33,22 @@ const Div = styled.div`
   border: solid 0.1px orange ;
   text-align:center;
   font-weight:bold;
-  font-size:100px;
-  padding-top:60px;
+  font-size:50px;
   font-family: 'Nanum Gothic', sans-serif;
   color:#ffffff;
+  /* @media(max-width:520px){
+    font-size:40px;
+  } */
+`
+
+const Title = styled.div`
+  font-family: 'Nanum Gothic', sans-serif;
+  color:#ffffff;
+  font-size:100px;
   @media(max-width:520px){
     font-size:40px;
   }
+
 `
 
 const Button = styled.button`
@@ -78,7 +87,9 @@ const App = () => {
   return (
     <>
       <Div>
-        음성GPT
+        <Title>
+          voice GPT
+        </Title>
         <Main>
           <Wrap>
             <Des>
@@ -88,7 +99,7 @@ const App = () => {
                 버튼을 눌러 음성 인식을 켜고 끌수 있습니다.
               </li>
               <li>
-                단어 위주로 짧고 명확하게 발음해주세요.
+                검색은 단어로 짧고 명확하게 발음해주세요.
               </li> 
             </Des>
             <div style={{ paddingTop:'100px'}}>
