@@ -24,11 +24,12 @@ const Des = styled.div`
   color:grey;
   font-family: 'Nanum Gothic', sans-serif;
   margin-top:30px;
+  color:#343a40;
 `
 
 const Div = styled.div`
   box-sizing:border-box;
-  background-color:orange;
+  background-color:#ff9f1c;
   position: -webkit-sticky;
   position: sticky;
   top:0;
@@ -111,13 +112,12 @@ const App = () => {
   const { transcript,listening,resetTranscript,browserSupportsSpeechRecognition
   } = useSpeechRecognition();
 
+  const [text, setText] = useState('');
+  const { speak, voices } = useSpeech();
 
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
   }
-
-  const [text, setText] = useState('');
-  const { speak, voices } = useSpeech();
 
   const handleChange = (e) => {
     setText(e.target.value);
@@ -126,7 +126,7 @@ const App = () => {
   const handleSpeak = () => {
     speak({ text: text, voice: voices[0] });
   };
-  
+
   return (
     <>
       <Div>
@@ -142,7 +142,7 @@ const App = () => {
                 버튼을 눌러 음성 인식을 켜고 끌수 있습니다.
               </li>
               <li>
-                검색은 단어 단위로 짧고 명확하게 발음해주세요.
+                검색은 되도록 짧고 명확하게 발음해주세요.
               </li>
               <li>
                 마이크를 켜고 2초 후 원하는 검색어를 말하세요.
