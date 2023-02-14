@@ -88,7 +88,7 @@ const App = () => {
             <Button onClick={resetTranscript}>
               Reset
             </Button>
-            <p>
+            <p style={{ fontSize:"20px" }}>
               {transcript}
             </p>
           </Wrap>
