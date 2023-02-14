@@ -16,9 +16,10 @@ const Nav = styled.div`
   border: solid 0.1px orange ;
   text-align:center;
   font-weight:bold;
-  font-size:50px;
-  padding-top:30px;
-  font:pr
+  font-size:60px;
+  padding-top:40px;
+  font-family: 'Nanum Gothic', sans-serif;
+
 `
 
 const App = () => {
