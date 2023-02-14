@@ -6390,6 +6390,7 @@ __metadata:
     react-is: ^18.2.0
     react-router-dom: ^6.8.1
     react-scripts: 5.0.1
+    react-speech-recognition: ^3.10.0
     styled-components: ^5.3.6
     web-vitals: ^2.1.4
     zustand: ^4.3.3
@@ -10788,6 +10789,15 @@ __metadata:
   bin:
     react-scripts: bin/react-scripts.js
   checksum: 92afa2f245c7092ccc97d5609dc7a2130616262e34da7f15072d9442e2d2e1d4909a91022abd1faac1336eb17c5525a10d9bd43e1ae374c7ec941ca20addca68
+  languageName: node
+  linkType: hard
+
+"react-speech-recognition@npm:^3.10.0":
+  version: 3.10.0
+  resolution: "react-speech-recognition@npm:3.10.0"
+  peerDependencies:
+    react: ">=16.8.0"
+  checksum: 40f3a2561f525d2624b154ccb6da90592a32fe131c33b3258a8892041bcf0c6f8e4527d7310718aeaee119266b1e8a1c383f9842ae984b7c97987ce9d6a5203f
   languageName: node
   linkType: hard
 
