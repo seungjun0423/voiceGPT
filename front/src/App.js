@@ -4,9 +4,17 @@ import styled from "styled-components";
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
 
-const Body = styled.div`
+const Main = styled.div`
   width:100%;
-  height:100%;
+  height:100vh;
+  position:relative;
+  display:flex;
+  justify-content:center;
+`
+
+const Wrap = styled.div`
+  margin-right:auto;
+  margin-left:auto;
 `
 
 const Nav = styled.div`
@@ -23,7 +31,24 @@ const Nav = styled.div`
   padding-top:40px;
   font-family: 'Nanum Gothic', sans-serif;
   color:#ffffff;
+  z-index:1;
+`
 
+const Button = styled.button`
+  width:50px;
+  height:40px;
+  border-radius:10px;
+  background:skyblue;
+`
+
+
+const Footer = styled.div`
+  width:100%;
+  height:100%;
+  bottom:0px;
+  border: solid 1px #cbcbcb;
+  font-family: 'Nanum Gothic', sans-serif;
+  background-color:#cbcbcb;
 `
 
 const App = () => {
@@ -37,29 +62,34 @@ const App = () => {
 
   return (
     <>
-      <Body>
-        <Nav>
-          음성GPT
-        </Nav>
-        <div>
-          <p>
-            Microphone: {listening ? 'on' : 'off'}
+      <Nav>
+        음성GPT
+      </Nav>
+      <Main>
+        <Wrap>
+          <p style={{ textAlign:'center' }}>
+            {listening ? 'on' : 'off'}
           </p>
-          <button onClick={SpeechRecognition.startListening}>
+          <Button 
+            onClick={SpeechRecognition.startListening}>
             Start
-          </button>
-          <button onClick={SpeechRecognition.stopListening}>
+          </Button>
+          <Button onClick={SpeechRecognition.stopListening}>
             Stop
-          </button>
-          <button onClick={resetTranscript}>
+          </Button>
+          <Button onClick={resetTranscript}>
             Reset
-          </button>
+          </Button>
           <p>
             {transcript}
-            {console.log(transcript)}
           </p>
-        </div>
-      </Body>
+        </Wrap>
+      </Main>
+
+      <Footer>
+        안녕하세요 저는 이승준입니다! <br/>
+        저는 웹 개발자입니다.
+      </Footer>
     </>
 
   );
