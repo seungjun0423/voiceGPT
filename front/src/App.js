@@ -116,6 +116,17 @@ const App = () => {
     return <span>Browser doesn't support speech recognition.</span>;
   }
 
+  const [text, setText] = useState('');
+  const { speak, voices } = useSpeech();
+
+  const handleChange = (e) => {
+    setText(e.target.value);
+  };
+
+  const handleSpeak = () => {
+    speak({ text: text, voice: voices[0] });
+  };
+  
   return (
     <>
       <Div>
