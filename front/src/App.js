@@ -1,11 +1,18 @@
 import { useState, useEffect } from 'react';
+import styled from "styled-components";
 
+const Nav = styled.div`
+  height:100px;
+  background-color:black;
+`
 
 const App = () => {
   return (
-    <div className="App">
+    <>
+    <Nav>
+    </Nav>
+    </>
 
-    </div>
   );
 }
 
