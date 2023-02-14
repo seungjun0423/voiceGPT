@@ -69,22 +69,40 @@ const Button = styled.button`
 
 const Footer = styled.div`
   width:100%;
-  height:100px;
+  height:100%;
   bottom:0px;
   border: solid 1px #cbcbcb;
   font-family: 'Nanum Gothic', sans-serif;
   background-color:#cbcbcb;
   font-size:25px;
   padding-top:50px;
+  padding-bottom:50px;
 
   @media(max-width:520px){
     font-size:16px;
   }
 `
 
+const Pic = styled.img`
+  object-fit:cover;
+  width:300px;
+  margin-bottom:20px;
+  border-radius:300px;
+`
+
 const Text = styled.p`
   fontSize:"20px";
   margin:20px;
+`
+const URL = styled.a`
+  color:#cdb4db;
+  text-decoration:none;
+`
+const Mail =styled.a`
+  margin-top:5px;
+  display:block;
+  text-decoration:none;
+  color:#ffafcc;
 `
 
 const App = () => {
@@ -138,8 +156,19 @@ const App = () => {
         </Main>
     
         <Footer>
+          <Pic src="https://avatars.githubusercontent.com/u/87581422?v=4" /><br/>
           안녕하세요 저는 어플을 만든 개발자 이승준입니다! <br/>
-          저에 대해 궁금하시다면 여기를 클릭해주세요!
+          저와 연락하고 싶으신분들은 아래를 참고해주세요! <br/><br/>
+          <URL 
+            href='https://github.com/seungjun0423'
+            title="개발자 승준의 깃허브로 이동"
+            target='_blank'
+          >
+            GitHub
+          </URL>
+          <Mail href="mailto:'tmdwns0423@nate.com'">
+            Mail
+          </Mail>
         </Footer>
       </Div>
     </>
