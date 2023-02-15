@@ -3,10 +3,9 @@ import { useState, useEffect } from 'react';
 import styled from "styled-components";
 
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
-
 import useTextToSpeech from 'react-hook-text-to-speech'
 
-
+import git from './img/github-mark.svg'
 
 
 const Main = styled.div`
@@ -71,6 +70,8 @@ const Button = styled.button`
   background-color:#A99;
   color:white;
 `
+
+
 
 const Footer = styled.div`
   display:flex;
@@ -161,7 +162,12 @@ const App = () => {
         </Main>
     
         <Footer>
-
+          <a 
+            href='https://github.com/seungjun0423/voiceGPT'
+            target='_blank'
+          >
+            <img src={git}/>
+          </a>
         </Footer>
       </Div>
     </>
