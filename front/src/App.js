@@ -160,9 +160,14 @@ const App = () => {
             <Text>
               {transcript}
             </Text>
-            
-              <input onChange={(e)=>setText(e.target.value)}/>
-      <button onClick={()=>convert(text)}>click</button>
+              <input 
+              onChange={(e)=>setText(e.target.value)}
+              />
+              <button 
+                onClick={()=>convert(text)}
+              >
+                click
+              </button>
 
           </Wrap>
         </Main>
