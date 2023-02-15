@@ -3,11 +3,11 @@ import { useState, useEffect } from 'react';
 import styled from "styled-components";
 
 
-const Reset = () => {
+const OnOffButton = () => {
   return (
     <>    
     </>
   );
 }
 
-export default Reset;
+export default OnOffButton;
