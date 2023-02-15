@@ -1,8 +1,11 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import styled from "styled-components";
+
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
-import useSpeech from 'react-hook-text-to-speech';
+
+import useTextToSpeech from 'react-hook-text-to-speech'
+
 
 
 
@@ -86,12 +89,6 @@ const Footer = styled.div`
   }
 `
 
-const Pic = styled.img`
-  object-fit:cover;
-  width:300px;
-  margin-bottom:20px;
-  border-radius:300px;
-`
 
 const Text = styled.p`
   fontSize:"20px";
@@ -109,23 +106,19 @@ const Mail =styled.a`
 `
 
 const App = () => {
+  // speech-recognition 
   const { transcript,listening,resetTranscript,browserSupportsSpeechRecognition
   } = useSpeechRecognition();
 
+  // text-to-speech
   const [text, setText] = useState('');
-  const { speak, voices } = useSpeech();
+  const convert=useTextToSpeech();
 
+  // speech-recognition
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
   }
 
-  const handleChange = (e) => {
-    setText(e.target.value);
-  };
-
-  const handleSpeak = () => {
-    speak({ text: text, voice: voices[0] });
-  };
 
   return (
     <>
@@ -167,12 +160,15 @@ const App = () => {
             <Text>
               {transcript}
             </Text>
+            
+              <input onChange={(e)=>setText(e.target.value)}/>
+      <button onClick={()=>convert(text)}>click</button>
 
           </Wrap>
         </Main>
     
         <Footer>
-          <Pic src="https://avatars.githubusercontent.com/u/87581422?v=4" /><br/>
+
           안녕하세요 저는 어플을 만든 개발자 이승준입니다 <br/>
           이 서비스는 chatGPT를 이용하기 힘든 취약 계층들을 위해 만들었습니다.<br/><br/><br/>
           이런분들에게 좋아요!
