@@ -97,10 +97,14 @@ const Footer = styled.div`
   } 
 `
 
-
 const Text = styled.p`
   fontSize:"20px";
   margin:20px;
+`
+
+const Input = styled.input`
+  width:500px;
+  height:300px;
 `
 
 const App = () => {
@@ -151,12 +155,8 @@ const App = () => {
             <Text>
               {transcript}
             </Text>
-              <input 
-              onChange={(e)=>setText(e.target.value)}
-              />
-              <button 
-                onClick={()=>convert(text)}
-              >
+              <Input onChange={(e)=>setText(e.target.value)}/>
+              <button onClick={()=>convert(text)}>
                 click
               </button>
 
