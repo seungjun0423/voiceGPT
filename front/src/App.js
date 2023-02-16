@@ -31,7 +31,6 @@ const Des = styled.div`
 
 const Div = styled.div`
   box-sizing:border-box;
-  background-color:#ff9f1c;
   position: -webkit-sticky;
   position: sticky;
   top:0;
@@ -40,28 +39,37 @@ const Div = styled.div`
   font-weight:bold;
   font-size:50px;
   font-family: 'Nanum Gothic', sans-serif;
-  color:#ffffff;
-  /* @media(max-width:520px){
+  color:#343a40;
+  @media(max-width:520px){
     font-size:40px;
-  } */
+  }
 `
 
 const Title = styled.div`
   font-family: 'Nanum Gothic', sans-serif;
-  color:#ffffff;
+  color:#343a40;
   font-size:100px;
-  margin-top:50px;
+  margin-top:20px;
   @media(max-width:520px){
     font-size:40px;
   }
+`
 
+const Img = styled.img`
+  object-fit:cover;
+  width:150px;
+  border-radius:30px;
+  margin-top:30px;
+  @media(max-width:520px){
+    width:80px;
+  }
 `
 
 const Button = styled.button`
   width:120px;
   height:80px;
   border-radius:10px;
-  margin:30px 10px 10px 10px;
+  margin:30px 10px 0px 10px;
   font-weight:bold;
   font-size:16px;
   font-family: 'Nanum Gothic', sans-serif;
@@ -83,9 +91,10 @@ const Footer = styled.div`
   font-size:22px;
   padding-top:50px;
   padding-bottom:50px;
+  margin-top:100px;
   @media(max-width:520px){
     font-size:16px;
-  }
+  } 
 `
 
 
@@ -112,26 +121,19 @@ const App = () => {
   return (
     <>
       <Div>
+        <Img 
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/640px-ChatGPT_logo.svg.png" />
         <Title>
-          음성인식 GPT
+            만물박사
         </Title>
         <Main>
           <Wrap>
             <Des>
-              사용시 숙지 사항<br/>
-              AI를 쉽고 간편하게 이용해보세요<br/><br/>
-              <li>
-                버튼을 눌러 음성 인식을 켜고 끌수 있습니다.
-              </li>
-              <li>
-                검색은 되도록 짧고 명확하게 발음해주세요.
-              </li>
-              <li>
-                마이크를 켜고 2초 후 원하는 검색어를 말하세요.
-              </li>
-              <li>
-                검색어를 말하면 버튼아래 텍스트로 보여요.
-              </li>
+              AI를 쉽고 편하게 이용해보세요<br/><br/>
+              사용법<br/>
+              1. 버튼을 눌러 마이크를 켭니다.<br/>
+              2. 궁금한점을 대화하듯 물어봅니다.<br/>
+              3. 척척박사의 답을 듣습니다<br/>
             </Des>
             <div style={{ paddingTop:'100px'}}>
               마이크 : {listening ? 'on' : 'off'}
@@ -162,12 +164,7 @@ const App = () => {
         </Main>
     
         <Footer>
-          <a 
-            href='https://github.com/seungjun0423/voiceGPT'
-            target='_blank'
-          >
-            <img src={git}/>
-          </a>
+
         </Footer>
       </Div>
     </>

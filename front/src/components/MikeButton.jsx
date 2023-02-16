@@ -3,11 +3,11 @@ import { useState, useEffect } from 'react';
 import styled from "styled-components";
 
 
-const OnOffButton = () => {
+const MikeButton = () => {
   return (
     <>    
     </>
   );
 }
 
-export default OnOffButton;
+export default MikeButton;
